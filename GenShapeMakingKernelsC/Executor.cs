@@ -43,15 +43,17 @@ namespace CrozzleCodeGen
 
 
 
-
+            // Creates the summary structure like 2x2
             var result = ExecuteCreator.Execute(patterns, interlockWidth, interlockHeight, name);
 
             //var path = "/Users/michaelgeurtjens/Developer/Batch/Batch/ShapeCalculators/";
         string path = "/Users/geurt/source/repos/BatchC/ShapeCalculator/";
 
-        System.IO.File.WriteAllText(path + name + ".swift", result);
+        System.IO.File.WriteAllText(path + name + ".cpp", result);
 
-
+            var resultHeader = ExecuteCreator.Execute_H(name);
+            System.IO.File.WriteAllText(path + name + ".h", resultHeader);
+  
             foreach (var combinations in patterns)
             {
                 // C3x3_LRL_UDU is an example
