@@ -11,10 +11,12 @@ namespace CrozzleCodeGen
         {
             string result = "";
             result += "#pragma once\n";
-            result += "#include \"WordModelSOA.h\"\n";
-            result += "#include \"ShapeModel.h\"\n";
-            result += "#include \"ToShape.h\"\n";
             result += "#include <vector>\n";
+            result += "#include \"ShapeModel.h\"\n";
+            result += "#include \"WordModelSOA.h\"\n";
+            
+            result += "#include \"ToShape.h\"\n";
+            
             result += "\n";
 
             result += "class " + name + "\n{\npublic:\n";
